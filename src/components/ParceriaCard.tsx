@@ -1,4 +1,5 @@
 'use client'
+import { useRouter } from 'next/navigation'
 import React from 'react'
 
 type Parceria = {
@@ -14,6 +15,8 @@ type Props = {
 }
 
 export default function ParceriaCard({ parceria, onDelete }: Props) {
+  const router = useRouter()
+
   const handleDelete = async () => {
     if (!parceria.id) return alert('ID da parceria não encontrado.')
     const confirm = window.confirm('Tem certeza que deseja excluir essa parceria?')
@@ -34,17 +37,32 @@ export default function ParceriaCard({ parceria, onDelete }: Props) {
     }
   }
 
+  const handleEdit = () => {
+    if (!parceria.id) return alert('ID da parceria não encontrado.')
+    router.push(`/put-parceria/${parceria.id}`)
+  }
+
   return (
     <div className="bg-white rounded-xl shadow p-4 relative">
       <div className="flex justify-between items-start mb-2">
-        <h2 className="text-xl font-semibold text-black">{parceria.title}</h2>
-        <button
-          onClick={handleDelete}
-          className="text-red-500 hover:text-red-700 text-sm"
-          title="Excluir"
-        >
-          🗑 Excluir
-        </button>
+        <h2 className="text-xl font-semibold text-black w-3/4">
+          {parceria.title}
+        </h2>
+        <div className="flex items-center gap-2">
+          <button
+            onClick={handleEdit}
+            className="bg-blue-500 hover:bg-blue-600 text-white text-sm py-1 px-3 rounded"
+          >
+            ✏️ Editar
+          </button>
+          <button
+            onClick={handleDelete}
+            className="bg-red-500 hover:bg-red-600 text-white text-sm py-1 px-3 rounded"
+            title="Excluir"
+          >
+            🗑 Excluir
+          </button>
+        </div>
       </div>
 
       <p className="text-blue-600 underline mb-2">
