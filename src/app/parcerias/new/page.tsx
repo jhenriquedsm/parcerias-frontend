@@ -1,10 +1,12 @@
 'use client'
 import { useState } from 'react'
+import { useRouter } from 'next/navigation'
 
 export default function NovaParceriaPage() {
   const [title, setTitle] = useState('')
   const [url, setUrl] = useState('')
   const [newsDate, setNewsDate] = useState('')
+  const router = useRouter()
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -31,6 +33,12 @@ export default function NovaParceriaPage() {
 
   return (
     <div className="p-8 max-w-xl mx-auto">
+        <button
+        onClick={() => router.push('/')}
+        className="mb-4 text-blue-600 underline"
+      >
+        ← Voltar para Home
+      </button>
       <h1 className="text-2xl font-bold mb-4">Nova Parceria</h1>
       <form onSubmit={handleSubmit} className="space-y-4">
         <input
