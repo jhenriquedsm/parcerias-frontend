@@ -63,54 +63,56 @@ export default function EditarParceriaPage() {
     }
   }
 
-  if (!parceria) return <p className="p-4 text-black">Carregando parceria...</p>
+  if (!parceria) 
+    return <p className="p-4 text-white bg-[#0a1d3a] min-h-screen flex items-center justify-center">Carregando parceria...</p>
 
   return (
-    <div className="max-w-xl mx-auto mt-8 bg-white p-6 rounded-xl shadow text-black">
-      <h1 className="text-2xl font-bold mb-4 text-center">Editar Parceria</h1>
-      <form onSubmit={handleSubmit} className="space-y-4">
-        <div>
-          <label className="block text-sm font-medium text-black">Título</label>
+    <div className="min-h-screen bg-[#0a1d3a] p-8 flex flex-col items-center">
+      <div className="w-full max-w-xl">
+        <button
+          onClick={() => router.push('/')}
+          className="mb-4 text-blue-400 underline"
+        >
+          ← Voltar para Home
+        </button>
+        <h1 className="text-white text-2xl font-bold mb-6 text-center">
+          Editar Parceria
+        </h1>
+        <form onSubmit={handleSubmit} className="space-y-4">
           <input
             type="text"
             name="title"
+            placeholder="Título"
             value={formData.title}
             onChange={handleChange}
-            className="w-full border border-gray-300 rounded p-2 text-black"
+            className="w-full p-3 bg-[#1B2A47] text-white border border-gray-600 rounded-lg placeholder-gray-400"
             required
           />
-        </div>
-        <div>
-          <label className="block text-sm font-medium text-black">URL</label>
           <input
             type="url"
             name="url"
+            placeholder="URL"
             value={formData.url}
             onChange={handleChange}
-            className="w-full border border-gray-300 rounded p-2 text-black"
+            className="w-full p-3 bg-[#1B2A47] text-white border border-gray-600 rounded-lg placeholder-gray-400"
             required
           />
-        </div>
-        <div>
-          <label className="block text-sm font-medium text-black">Data da Notícia</label>
           <input
             type="date"
             name="newsDate"
             value={formData.newsDate}
             onChange={handleChange}
-            className="w-full border border-gray-300 rounded p-2 text-black"
+            className="w-full p-3 bg-[#1B2A47] text-white border border-gray-600 rounded-lg"
             required
           />
-        </div>
-        <div className="text-right">
           <button
             type="submit"
-            className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded"
+            className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition duration-200"
           >
             Salvar
           </button>
-        </div>
-      </form>
+        </form>
+      </div>
     </div>
   )
 }
