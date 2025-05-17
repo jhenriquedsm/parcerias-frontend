@@ -32,45 +32,47 @@ export default function NovaParceriaPage() {
   }
 
   return (
-    <div className="p-8 max-w-xl mx-auto">
+    <div className="min-h-screen bg-[#0a1d3a] p-8 flex flex-col items-center">
+      <div className="w-full max-w-xl">
         <button
-        onClick={() => router.push('/')}
-        className="mb-4 text-blue-600 underline"
-      >
-        ← Voltar para Home
-      </button>
-      <h1 className="text-2xl font-bold mb-4">Nova Parceria</h1>
-      <form onSubmit={handleSubmit} className="space-y-4">
-        <input
-          type="text"
-          placeholder="Título"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-          className="w-full p-2 border rounded"
-          required
-        />
-        <input
-          type="url"
-          placeholder="URL"
-          value={url}
-          onChange={(e) => setUrl(e.target.value)}
-          className="w-full p-2 border rounded"
-          required
-        />
-        <input
-          type="date"
-          value={newsDate}
-          onChange={(e) => setNewsDate(e.target.value)}
-          className="w-full p-2 border rounded"
-          required
-        />
-        <button
-          type="submit"
-          className="bg-blue-600 text-white px-4 py-2 rounded"
+          onClick={() => router.push('/')}
+          className="mb-4 text-blue-400 underline"
         >
-          Cadastrar
+          ← Voltar para Home
         </button>
-      </form>
+        <h1 className="text-white text-2xl font-bold mb-6">Nova Parceria</h1>
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <input
+            type="text"
+            placeholder="Título"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            className="w-full p-3 bg-[#1B2A47] text-white border border-gray-600 rounded-lg placeholder-white"
+            required
+          />
+          <input
+            type="url"
+            placeholder="URL"
+            value={url}
+            onChange={(e) => setUrl(e.target.value)}
+            className="w-full p-3 bg-[#1B2A47] text-white border border-gray-600 rounded-lg placeholder-white"
+            required
+          />
+          <input
+            type="date"
+            value={newsDate}
+            onChange={(e) => setNewsDate(e.target.value)}
+            className="w-full p-3 bg-[#1B2A47] text-white border border-gray-600 rounded-lg"
+            required
+          />
+          <button
+            type="submit"
+            className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition duration-200"
+          >
+            Cadastrar
+          </button>
+        </form>
+      </div>
     </div>
   )
 }

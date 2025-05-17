@@ -42,37 +42,37 @@ export default function ParceriaCard({ parceria, onDelete }: Props) {
     router.push(`/put-parceria/${parceria.id}`)
   }
 
-  return (
-    <div className="bg-white rounded-xl shadow p-4 relative">
-      <div className="flex justify-between items-start mb-2">
-        <h2 className="text-xl font-semibold text-black w-3/4">
-          {parceria.title}
-        </h2>
-        <div className="flex items-center gap-2">
-          <button
-            onClick={handleEdit}
-            className="bg-blue-500 hover:bg-blue-600 text-white text-sm py-1 px-3 rounded"
-          >
-            ✏️ Editar
-          </button>
-          <button
-            onClick={handleDelete}
-            className="bg-red-500 hover:bg-red-600 text-white text-sm py-1 px-3 rounded"
-            title="Excluir"
-          >
-            🗑 Excluir
-          </button>
-        </div>
+ return (
+  <div className="bg-white rounded-xl shadow-md p-6 relative"> {/* padding maior, sombra mais leve */}
+    <div className="flex justify-between items-start mb-4"> {/* margin bottom maior para separar do conteúdo */}
+      <h2 className="text-xl font-semibold text-black w-3/4 break-words"> {/* evitar overflow do título */}
+        {parceria.title}
+      </h2>
+      <div className="flex items-center gap-3"> {/* aumentar gap entre botões */}
+        <button
+          onClick={handleEdit}
+          className="bg-blue-500 hover:bg-blue-600 text-white text-sm py-2 px-4 rounded transition-colors duration-200"
+        >
+          ✏️ Editar
+        </button>
+        <button
+          onClick={handleDelete}
+          className="bg-red-500 hover:bg-red-600 text-white text-sm py-2 px-4 rounded transition-colors duration-200"
+          title="Excluir"
+        >
+          🗑 Excluir
+        </button>
       </div>
-
-      <p className="text-blue-600 underline mb-2">
-        <a href={parceria.url} target="_blank" rel="noopener noreferrer">
-          {parceria.url}
-        </a>
-      </p>
-      <p className="text-xs text-gray-500">
-        Data: {new Date(parceria.newsDate).toLocaleDateString()}
-      </p>
     </div>
-  )
+
+    <p className="text-blue-600 underline mb-3 break-all"> {/* margem maior e quebra de linha para url */}
+      <a href={parceria.url} target="_blank" rel="noopener noreferrer">
+        {parceria.url}
+      </a>
+    </p>
+    <p className="text-xs text-gray-500">
+      Data: {new Date(parceria.newsDate).toLocaleDateString('pt-BR')}
+    </p>
+  </div>
+)
 }
