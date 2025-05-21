@@ -1,8 +1,10 @@
 'use client'
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
+import { useAuthGuard } from '@/hooks/useAuthGuard'
 
 export default function NovaParceriaPage() {
+  useAuthGuard();
   const [title, setTitle] = useState('')
   const [url, setUrl] = useState('')
   const [newsDate, setNewsDate] = useState('')

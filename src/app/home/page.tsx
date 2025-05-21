@@ -2,14 +2,26 @@
 import { useRouter } from 'next/navigation'
 import Image from 'next/image'
 import logo from '../../../public/logo.png' 
+import { useAuthGuard } from '@/hooks/useAuthGuard'
 
 export default function HomePage() {
+  useAuthGuard();
   const router = useRouter()
 
-   return (
+  return (
     <main className="flex flex-col min-h-screen bg-[#0A1E3F] text-white p-6">
       <div className="flex justify-between items-center w-full mb-12">
         <Image src={logo} alt="Logo Serpro" width={160} height={60} />
+
+        <button
+          onClick={() => {
+            localStorage.removeItem('auth');
+            router.push('/');
+          }}
+          className="bg-red-500 px-4 py-2 rounded hover:bg-red-600"
+        >
+          Sair
+        </button>
       </div>
 
       <h1 className="text-4xl font-bold mb-10 text-center">Parcerias Serpro</h1>

@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import api from '@/services/api';
 import ParceriaCard from '@/components/ParceriaCard';
+import { useAuthGuard } from '@/hooks/useAuthGuard'
 
 type Parceria = {
   id?: number;      
@@ -13,6 +14,7 @@ type Parceria = {
 };
 
 export default function ParceriasPage() {
+  useAuthGuard();
   const [parcerias, setParcerias] = useState<Parceria[]>([]);
   const [ordenacao, setOrdenacao] = useState<'recente' | 'antiga'>('recente');
   const router = useRouter();

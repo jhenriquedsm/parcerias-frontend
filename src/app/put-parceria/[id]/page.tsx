@@ -1,6 +1,7 @@
 'use client'
 import { useEffect, useState } from 'react'
 import { useParams, useRouter } from 'next/navigation'
+import { useAuthGuard } from '@/hooks/useAuthGuard'
 
 type Parceria = {
   id: number
@@ -10,6 +11,7 @@ type Parceria = {
 }
 
 export default function EditarParceriaPage() {
+  useAuthGuard();
   const { id } = useParams()
   const router = useRouter()
   const [parceria, setParceria] = useState<Parceria | null>(null)
