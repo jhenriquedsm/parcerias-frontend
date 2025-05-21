@@ -1,36 +1,58 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Parcerias SERPRO (Projeto Pessoal) 🧩
+Bem-vindo ao Parcerias SERPRO, um protótipo de aplicação fullstack desenvolvida como projeto pessoal, sem vínculo oficial com o SERPRO. Este projeto foi criado para facilitar o cadastro e a visualização de parcerias divulgadas no portal da instituição, servindo como um exercício prático de desenvolvimento de software.
 
-## Getting Started
+⚠️ Aviso: Este é um projeto fictício e não possui qualquer vínculo oficial com o SERPRO. Ele foi desenvolvido exclusivamente para fins de aprendizado e demonstração.
 
-First, run the development server:
+## 📑 Visão Geral
+O Parcerias SERPRO é um projeto fullstack que abrange desde o banco de dados até a interface do usuário. A aplicação permite gerenciar parcerias de forma eficiente, com uma interface responsiva. O frontend está hospedado em [Vercel](https://vercel.com) e consome uma API RESTful desenvolvida em Java com Spring Boot que está hospedada em [Render](https://render.com/).
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### Principais Funcionalidades
+- CRUD de Parcerias: Interface intuitiva para criar, visualizar, atualizar e deletar parcerias.
+- Visualização de Dados: Exibição clara e organizada das parcerias registradas, podendo ordenar por data mais recente e mais antiga.
+- Integração com API: Comunicação fluida entre frontend e backend para operações.
+- Design Responsivo: Experiência otimizada para dispositivos móveis e desktop.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Tecnologias Utilizadas
+O projeto foi construído com tecnologias modernas e amplamente adotadas no mercado:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Frontend:
+- React com Next.js para construção de interfaces dinâmicas e otimizadas.
+- Tailwind CSS para estilização rápida e responsiva.
+- TypeScript para tipagem estática e maior robustez no código.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Backend:
+- Java com Spring Boot para uma API RESTful escalável.
+- PostgreSQL
 
-## Learn More
+### Hospedagem:
+- Vercel (frontend)
+- Render (backend)
 
-To learn more about Next.js, take a look at the following resources:
+## 🌟 Por que este Projeto?
+### Este projeto foi desenvolvido com os seguintes objetivos:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Aprendizado Fullstack: Praticar o desenvolvimento de aplicações completas, desde o backend até o frontend.
+- Exploração de Tecnologias Modernas: Utilizar ferramentas e frameworks atuais, como Next.js, Tailwind CSS e Spring Boot.
+- Portfólio: Demonstrar habilidades técnicas em um projeto prático e bem estruturado.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📸 Capturas de Tela
+### Login
+![Login](public/login.png)
 
-## Deploy on Vercel
+### Home
+![Home](public/home.png)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Cadastro
+![Cadastro](public/cadastro.png)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Parcerias
+![Parcerias](public/parcerias.png)
+
+### Edição
+![Edição](public/update.png)
+
+## 📬 Contato
+
+Autor: José Henrique
+E-mail: jhsilvamata@gmail.com  
+LinkedIn: [jhenriquedsm](https://www.linkedin.com/in/jhenriquedsm)
