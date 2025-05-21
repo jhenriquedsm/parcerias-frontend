@@ -23,7 +23,7 @@ export default function EditarParceriaPage() {
   useEffect(() => {
     const fetchParceria = async () => {
       try {
-        const res = await fetch(`http://localhost:8080/parcerias/${id}`)
+        const res = await fetch(`https://parcerias-serpro.onrender.com/parcerias/${id}`)
         if (!res.ok) throw new Error('Erro ao buscar parceria')
         const data = await res.json()
         setParceria(data)
@@ -70,10 +70,10 @@ export default function EditarParceriaPage() {
     <div className="min-h-screen bg-[#0a1d3a] p-8 flex flex-col items-center">
       <div className="w-full max-w-xl">
         <button
-          onClick={() => router.push('/home')}
+          onClick={() => router.push('/parcerias')}
           className="mb-4 text-blue-400 underline"
         >
-          ← Voltar para Home
+          ← Voltar para Parcerias
         </button>
         <h1 className="text-white text-2xl font-bold mb-6 text-center">
           Editar Parceria
