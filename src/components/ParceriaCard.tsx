@@ -23,7 +23,7 @@ export default function ParceriaCard({ parceria, onDelete }: Props) {
     if (!confirm) return
 
     try {
-      const res = await fetch(`http://localhost:8080/parcerias/${parceria.id}`, {
+      const res = await fetch(`https://parcerias-serpro.onrender.com/parcerias/${parceria.id}`, {
         method: 'DELETE',
       })
 
