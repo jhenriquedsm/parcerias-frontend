@@ -1,41 +1,53 @@
-'use client'
-import { useRouter } from 'next/navigation'
-import Image from 'next/image'
-import logo from '../../public/logo.png' 
+'use client';
 
-export default function HomePage() {
-  const router = useRouter()
+import { useState } from 'react';
+import { useRouter } from 'next/navigation';
+import Image from 'next/image';
+import logo from '../../public/logo.png';
 
-   return (
-    <main className="flex flex-col min-h-screen bg-[#0A1E3F] text-white p-6">
-      <div className="flex justify-between items-center w-full mb-12">
-        <Image src={logo} alt="Logo Serpro" width={160} height={60} />
-      </div>
+export default function LoginPage() {
+  const [email, setEmail] = useState('');
+  const [senha, setSenha] = useState('');
+  const router = useRouter();
 
-      <h1 className="text-4xl font-bold mb-10 text-center">Parcerias Serpro</h1>
+  const handleLogin = () => {
+    if (email === process.env.NEXT_PUBLIC_ADMIN_EMAIL && senha === process.env.NEXT_PUBLIC_ADMIN_PASSWORD) {
+      localStorage.setItem('auth', 'true');
+      router.push('/home');
+    } else {
+      alert('Credenciais inválidas');
+    }
+  };
 
-      <div className="flex justify-center gap-6">
-        <button
-          onClick={() => router.push('/parcerias/new')}
-          className="bg-blue-700 hover:bg-blue-800 text-white px-6 py-3 rounded-xl shadow-lg transition"
-        >
-          ➕ Cadastrar Parceria
-        </button>
-
-        <button
-          onClick={() => router.push('/parcerias')}
-          className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-xl shadow-lg transition"
-        >
-          📄 Listar Parcerias
-        </button>
-      </div>
-
-      <div className="flex-grow" />
+  return (
+    <main className="min-h-screen flex flex-col items-center justify-center bg-[#0a1d3a] text-white">
+      <Image src={logo} alt="Logo" width={150} height={50} className="mb-6" />
+      <h1 className="text-2xl font-bold mb-4 text-white">Login</h1>
+      <input
+        type="email"
+        placeholder="Email"
+        className="mb-2 p-2 rounded border border-white text-white placeholder-white bg-transparent"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+      />
+      <input
+        type="password"
+        placeholder="Senha"
+        className="mb-4 p-2 rounded border border-white text-white placeholder-white bg-transparent"
+        value={senha}
+        onChange={(e) => setSenha(e.target.value)}
+      />
+      <button
+        onClick={handleLogin}
+        className="bg-blue-500 px-4 py-2 rounded hover:bg-blue-600"
+      >
+        Entrar
+      </button>
 
       <footer className="text-center text-sm text-gray-400 mt-12 border-t border-gray-600 pt-4">
         <p>Developed by José Henrique</p>
         <p className='text-red-500'>Esse projeto não é um projeto oficial do Serpro</p>
       </footer>
     </main>
-  )
+  );
 }
