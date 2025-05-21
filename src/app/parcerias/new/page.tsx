@@ -12,7 +12,7 @@ export default function NovaParceriaPage() {
     e.preventDefault()
 
     try {
-      const res = await fetch('http://localhost:8080/parcerias', {
+      const res = await fetch('https://parcerias-serpro.onrender.com/parcerias', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

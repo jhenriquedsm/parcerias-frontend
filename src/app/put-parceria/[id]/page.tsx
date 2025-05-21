@@ -48,7 +48,7 @@ export default function EditarParceriaPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     try {
-      const res = await fetch(`http://localhost:8080/parcerias/${id}`, {
+      const res = await fetch(`https://parcerias-serpro.onrender.com/parcerias/${id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ ...formData, id: Number(id) }),
