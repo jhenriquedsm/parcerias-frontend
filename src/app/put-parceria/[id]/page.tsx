@@ -70,7 +70,7 @@ export default function EditarParceriaPage() {
     <div className="min-h-screen bg-[#0a1d3a] p-8 flex flex-col items-center">
       <div className="w-full max-w-xl">
         <button
-          onClick={() => router.push('/')}
+          onClick={() => router.push('/home')}
           className="mb-4 text-blue-400 underline"
         >
           ← Voltar para Home

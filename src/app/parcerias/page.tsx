@@ -37,7 +37,7 @@ export default function ParceriasPage() {
   return (
     <main className="min-h-screen bg-[#0a1d3a] p-6">
       <button
-        onClick={() => router.push('/')}
+        onClick={() => router.push('/home')}
         className="mb-4 text-blue-400 underline"
       >
         ← Voltar para Home
